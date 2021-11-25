@@ -1,39 +1,68 @@
 {
-  "name": "czasogar",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "web-vitals": "^1.0.1"
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "czasogar",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10",
+        "@types/file-saver": "^2.0.4",
+        "@types/jest": "^26.0.15",
+        "@types/node": "^12.0.0",
+        "@types/ramda": "^0.27.54",
+        "@types/react": "^17.0.0",
+        "@types/react-datepicker": "^4.3.2",
+        "@types/react-dom": "^17.0.0",
+        "@types/react-spinkit": "^3.0.7",
+        "@types/uuid": "^8.3.3",
+        "@react-pdf/types": "^2.0.7",
+        "react-scripts": "4.0.3",
+        "typescript": "^4.1.2"
+    },
+    "dependencies": {
+        "@chakra-ui/react": "^1.7.2",
+        "@emotion/react": "^11.6.0",
+        "@emotion/styled": "^11.6.0",
+        "@hookform/resolvers": "^2.8.3",
+        "@react-pdf/renderer": "^2.0.21",
+        "date-fns": "^2.26.0",
+        "file-saver": "^2.0.5",
+        "framer-motion": "4.1.17",
+        "ky": "^0.28.7",
+        "ramda": "^0.27.1",
+        "react": "^17.0.2",
+        "react-datepicker": "^4.4.0",
+        "react-dom": "^17.0.2",
+        "react-hook-form": "^7.20.2",
+        "react-icons": "^4.3.1",
+        "react-redux": "^7.2.6",
+        "react-spinkit": "^3.0.0",
+        "redux": "^4.1.2",
+        "redux-observable": "^2.0.0",
+        "rxjs": "^7.4.0",
+        "typescript-fsa": "^3.0.0",
+        "typescript-fsa-reducers": "^1.2.2",
+        "uuid": "^8.3.2",
+        "web-vitals": "^1.0.1",
+        "zod": "^3.11.6"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx src/",
+        "eject": "react-scripts eject"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }

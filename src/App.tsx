@@ -1,15 +1,20 @@
+import { ChakraProvider } from "@chakra-ui/react"
 import React from "react"
+import { Provider } from "react-redux"
+import DefaultLayout from "./application/components/layout/DefaultLayout"
+import applicationStore from "./application/store"
+import { theme } from "./application/theme"
+import ProfilesContainer from "./domain/application-profile/components/ProfilesContainer"
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-function App() {
+function App(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-            </header>
-        </div>
+        <Provider store={applicationStore}>
+            <ChakraProvider theme={theme}>
+                <DefaultLayout>
+                    <ProfilesContainer />
+                </DefaultLayout>
+            </ChakraProvider>
+        </Provider>
     )
 }
 
