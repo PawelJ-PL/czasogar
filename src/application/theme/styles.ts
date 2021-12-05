@@ -1,7 +1,7 @@
 const globalStyles = {
     body: {
         bg: "platinum",
-        color: "darkLiver"
+        color: "darkLiver",
     },
 }
 
