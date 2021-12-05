@@ -8,7 +8,6 @@ export const createReducer = <Params, Result, Error = unknown>(
     asyncActions: AsyncActionCreators<Params, Result, Error>,
     resetAction?: ActionCreator<void>
 ) => {
-
     const baseReducer = reducerWithInitialState<AsyncOperationResult<Params, Result, Error>>({ status: "NOT_STARTED" })
         .case(asyncActions.started, (_, params) => ({
             status: "PENDING",

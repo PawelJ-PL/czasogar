@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         borderTop: "2",
         borderLeft: "2",
-        borderRight: "2"
+        borderRight: "2",
     },
     leftPart: {
         flex: "5",
