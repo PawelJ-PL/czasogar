@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "https://PawelJ-PL.github.io/czasogar/static/js/main.18be1c50.chunk.js",
+    "main.js.map": "https://PawelJ-PL.github.io/czasogar/static/js/main.18be1c50.chunk.js.map",
+    "runtime-main.js": "https://PawelJ-PL.github.io/czasogar/static/js/runtime-main.25a1e47e.js",
+    "runtime-main.js.map": "https://PawelJ-PL.github.io/czasogar/static/js/runtime-main.25a1e47e.js.map",
+    "static/css/2.be20e0ff.chunk.css": "https://PawelJ-PL.github.io/czasogar/static/css/2.be20e0ff.chunk.css",
+    "static/js/2.56158682.chunk.js": "https://PawelJ-PL.github.io/czasogar/static/js/2.56158682.chunk.js",
+    "static/js/2.56158682.chunk.js.map": "https://PawelJ-PL.github.io/czasogar/static/js/2.56158682.chunk.js.map",
+    "static/js/3.b7212f4a.chunk.js": "https://PawelJ-PL.github.io/czasogar/static/js/3.b7212f4a.chunk.js",
+    "static/js/3.b7212f4a.chunk.js.map": "https://PawelJ-PL.github.io/czasogar/static/js/3.b7212f4a.chunk.js.map",
+    "index.html": "https://PawelJ-PL.github.io/czasogar/index.html",
+    "static/css/2.be20e0ff.chunk.css.map": "https://PawelJ-PL.github.io/czasogar/static/css/2.be20e0ff.chunk.css.map",
+    "static/js/2.56158682.chunk.js.LICENSE.txt": "https://PawelJ-PL.github.io/czasogar/static/js/2.56158682.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.25a1e47e.js",
+    "static/css/2.be20e0ff.chunk.css",
+    "static/js/2.56158682.chunk.js",
+    "static/js/main.18be1c50.chunk.js"
+  ]
+}
