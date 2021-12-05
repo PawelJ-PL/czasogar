@@ -3,7 +3,7 @@ import React from "react"
 import { WorkingTimeStatement } from "../../types/WorkingTimeStatement"
 import format from "date-fns/format"
 import pl from "date-fns/locale/pl"
-import Metric from "./Metic"
+import Metric from "./Metric"
 import DaysList from "./DaysList"
 import HoursSummary from "./HoursSummary"
 
