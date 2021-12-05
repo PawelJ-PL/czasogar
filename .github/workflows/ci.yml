@@ -23,7 +23,7 @@ jobs:
       - name: "Install dependencies"
         run: "yarn"
       - name: "Compile"
-      - run: "yarn run compile-only"
+        run: "yarn run compile-only"
       - name: "Run frontend tests"
         run: "yarn run test"
       - name: "Linter"
