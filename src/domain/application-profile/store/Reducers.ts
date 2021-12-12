@@ -20,7 +20,11 @@ const getProfilesReducer = createReducer(getProfilesAction)
 
 const updateProfilesReducer = createReducer(addOrUpdateProfileAction).build()
 
-const getDefaultProfileReducer = createReducer(getDefaultProfileAction).build()
+const getDefaultProfileReducer = createReducer(getDefaultProfileAction)
+    .case(addOrUpdateProfileAction.done, (state, action) =>
+        action.params ? { status: "FINISHED", data: action.params.profileName, params: undefined } : state
+    )
+    .build()
 
 const setDefaultProfileReducer = createReducer(setDefaultProfileAction).build()
 

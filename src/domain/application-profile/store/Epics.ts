@@ -13,6 +13,7 @@ import { z } from "zod"
 import storageService from "../../../application/api/StorageService"
 
 const PROFILES_STORAGE_KEY = "USER_PROFILES"
+const DEFAULT_PROFILE_KEY = "DEFAULT_PROFILE"
 
 const getProfiles = (api: typeof storageService) =>
     api.getObject(PROFILES_STORAGE_KEY, z.record(ProfileSchema)).then((result) => result ?? {})
@@ -26,11 +27,11 @@ const updateProfileEpic = createEpic(addOrUpdateProfileAction, async (params, de
 })
 
 const getDefaultProfileEpic = createEpic(getDefaultProfileAction, (_, deps) =>
-    deps.storageService.getObject(PROFILES_STORAGE_KEY, z.string())
+    deps.storageService.getObject(DEFAULT_PROFILE_KEY, z.string())
 )
 
 const setDefaultProfileEpic = createEpic(setDefaultProfileAction, (params, deps) =>
-    deps.storageService.saveObject(PROFILES_STORAGE_KEY, params)
+    deps.storageService.saveObject(DEFAULT_PROFILE_KEY, params)
 )
 
 export const profileEpics = combineEpics<Action, Action, AppState, Deps>(

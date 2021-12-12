@@ -9,9 +9,11 @@ import AbsencesPage from "./AbsencesPage"
 import { Box } from "@chakra-ui/layout"
 import UnexpectedErrorMessage from "../../../../application/components/common/UnexpectedErrorMessage"
 import MonthSummaryPage from "../summary/MonthSummaryPage"
+import SelectProfile from "../../../application-profile/components/SelectProfile"
 
 type Props = {
     profile: Profile
+    profiles: Record<string, Profile>
 } & ReturnType<typeof mapStateToProps> &
     ReturnType<typeof mapDispatchToProps>
 
@@ -22,6 +24,7 @@ const AbsencesContainer: React.FC<Props> = ({
     fetchPublicHolidays,
     publicHolidaysResult,
     monthSummaryResult,
+    profiles,
 }) => {
     useEffect(() => {
         if (!activeDate) {
@@ -41,16 +44,20 @@ const AbsencesContainer: React.FC<Props> = ({
     }
     if (publicHolidaysResult.status === "FINISHED") {
         return (
-            <AbsencesPage
-                publicHolidays={publicHolidaysResult.data}
-                profile={profile}
-                activeDate={publicHolidaysResult.params}
-            />
+            <Box>
+                <SelectProfile profiles={profiles} defaultProfile={profile.profileName} />
+                <AbsencesPage
+                    publicHolidays={publicHolidaysResult.data}
+                    profile={profile}
+                    activeDate={publicHolidaysResult.params}
+                />
+            </Box>
         )
     } else if (publicHolidaysResult.status === "FAILED") {
         return (
             <Box>
                 <UnexpectedErrorMessage error={publicHolidaysResult.error} alertProps={{ marginBottom: "0.5rem" }} />
+                <SelectProfile profiles={profiles} defaultProfile={profile.profileName} />
                 <AbsencesPage publicHolidays={null} profile={profile} activeDate={publicHolidaysResult.params} />
             </Box>
         )

@@ -50,6 +50,7 @@ const NewProfileModal: React.FC<Props> = ({ isOpen, onClose, canClose, saveProfi
 
     const onSubmit = (data: Profile) => {
         saveProfile(data)
+        onClose()
     }
 
     const hourValues = range(0, 24)
