@@ -30,8 +30,6 @@ const ProfilesContainer: React.FC<Props> = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    console.log(defaultProfileResult)
-
     if (defaultProfileResult.status === "PENDING") {
         return <FullPageLoader text="Wczytywanie profilu" />
     }
