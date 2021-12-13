@@ -30,6 +30,8 @@ const ProfilesContainer: React.FC<Props> = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    console.log(defaultProfileResult)
+
     if (defaultProfileResult.status === "PENDING") {
         return <FullPageLoader text="Wczytywanie profilu" />
     }
@@ -42,6 +44,7 @@ const ProfilesContainer: React.FC<Props> = ({
             : undefined
         return (
             <AbsencesContainer
+                key={JSON.stringify(selectedProfile?.profileName) + JSON.stringify(profilesResult.data)}
                 profile={selectedProfile ?? Object.values(profilesResult.data)[0]}
                 profiles={profilesResult.data}
             />

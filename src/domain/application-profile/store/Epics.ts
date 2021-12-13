@@ -5,12 +5,14 @@ import { ProfileSchema } from "./../types/Profile"
 import { createEpic } from "./../../../application/store/async/AsyncActionEpic"
 import {
     addOrUpdateProfileAction,
+    deleteProfileAction,
     getDefaultProfileAction,
     getProfilesAction,
     setDefaultProfileAction,
 } from "./Actions"
 import { z } from "zod"
 import storageService from "../../../application/api/StorageService"
+import omit from "ramda/src/omit"
 
 const PROFILES_STORAGE_KEY = "USER_PROFILES"
 const DEFAULT_PROFILE_KEY = "DEFAULT_PROFILE"
@@ -34,9 +36,16 @@ const setDefaultProfileEpic = createEpic(setDefaultProfileAction, (params, deps)
     deps.storageService.saveObject(DEFAULT_PROFILE_KEY, params)
 )
 
+const deleteProfileEpic = createEpic(deleteProfileAction, async (params, deps) => {
+    const currentProfiles = await getProfiles(deps.storageService)
+    const updated = omit([params])(currentProfiles)
+    return deps.storageService.saveObject(PROFILES_STORAGE_KEY, updated)
+})
+
 export const profileEpics = combineEpics<Action, Action, AppState, Deps>(
     getProfilesEpic,
     updateProfileEpic,
     getDefaultProfileEpic,
-    setDefaultProfileEpic
+    setDefaultProfileEpic,
+    deleteProfileEpic
 )

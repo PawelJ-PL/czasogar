@@ -10,3 +10,5 @@ export const addOrUpdateProfileAction = actionCreator.async<Profile, void, Error
 export const setDefaultProfileAction = actionCreator.async<string, void, Error>("SET_DEFAULT_PROFILE")
 
 export const getDefaultProfileAction = actionCreator.async<void, string | null, Error>("GET_DEFAULT_PROFILE")
+
+export const deleteProfileAction = actionCreator.async<string, void, Error>("DELETE_PROFILE")
